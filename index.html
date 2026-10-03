@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Beebe Luxury Auto Detail | PPF, Ceramic Coating &amp; Window Tint — Lexington, SC</title>
-  <meta name="description" content="Beebe Luxury Auto Detail, 1736 W Main St, Lexington, SC: paint protection film, paint correction, ceramic coating, window tint and mobile detailing. Certified System X installers, 5.0 on Google. Call or text (803) 745-0169." />
+  <title>Beebe Luxury Auto Detail | PPF &amp; Ceramic Coating, Lexington, SC</title>
+  <meta name="description" content="PPF, Ceramic Coating, Paint Correction &amp; Window Tint at 1736 W Main St, Lexington, SC. Certified System X Installers, 5.0 on Google. Call (803) 745-0169." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.beebeluxuryautodetail.com/" />
   <meta property="og:url" content="https://www.beebeluxuryautodetail.com/" />
@@ -13,20 +13,28 @@
   <link rel="apple-touch-icon" href="img/favicon.png?v=1" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Beebe Luxury Auto Detail — PPF, Ceramic Coating &amp; Window Tint" />
-  <meta property="og:description" content="Certified PPF and ceramic coating installer in Lexington, SC. 5.0 on Google across 174 reviews. Bringing Luxury to Your Doorstep." />
+  <meta property="og:description" content="Certified PPF and Ceramic Coating installer in Lexington, SC. 5.0 on Google, 170+ reviews. Bringing Luxury to Your Doorstep." />
   <meta property="og:image" content="https://www.beebeluxuryautodetail.com/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Beebe Luxury Auto Detail, Lexington SC" />
+  <meta property="og:site_name" content="Beebe Luxury Auto Detail" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" /></noscript>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"AutomotiveBusiness","name":"Beebe Luxury Auto Detail",
    "telephone":"+1-803-745-0169","email":"kewan@beebeluxuryautodetail.com","image":"https://www.beebeluxuryautodetail.com/img/og.jpg",
    "address":{"@type":"PostalAddress","streetAddress":"1736 W Main St","addressLocality":"Lexington","addressRegion":"SC","postalCode":"29072","addressCountry":"US"},
    "geo":{"@type":"GeoCoordinates","latitude":33.9802221,"longitude":-81.2720298},
    "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"17:00"}],
-   "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"174"},
    "sameAs":["https://www.instagram.com/beebe_luxuryautodetail/","https://www.facebook.com/Beebeluxuryautodetailllc"],
-   "url":"https://www.beebeluxuryautodetail.com/"}
+   "url":"https://www.beebeluxuryautodetail.com/","@id":"https://www.beebeluxuryautodetail.com/#business",
+   "logo":"https://www.beebeluxuryautodetail.com/img/logo.png","priceRange":"$350–$6,500",
+   "hasMap":"https://www.google.com/maps?cid=17227912240314038509","paymentAccepted":"Credit Card, Debit Card, Afterpay"}
   </script>
   <style>
     :root, .sw-root {
@@ -36,7 +44,7 @@
     }
     html { scroll-behavior: smooth; }
     body { margin: 0; background: var(--bg); font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #fff; }
-    /* engine dark-theme fixes (Glass House / Detail Hut / Tint IQ) */
+    /* engine dark-theme fixes */
     .sw-topbar { display: none !important; }
     .sw-route__label { color: #000 !important; }
     .sw-scene__video, .sw-scene__still { object-fit: contain !important; }
@@ -45,6 +53,11 @@
     .sw-btn--primary { color: #03110f !important; background: var(--cyan) !important; }
     .sw-copy__tags li { color: #fff !important; background: color-mix(in srgb, var(--cyan) 18%, #111) !important; }
     @media (max-width:860px) and (orientation:portrait) { .sw-scene__video, .sw-scene__still { object-position: center 28% !important; } }
+    /* desktop: anchor the copy to the bottom (the engine's inline drift transform drops the -50% centring) */
+    @media (min-width: 861px) { .sw-copy { top: auto !important; bottom: clamp(40px, 7vh, 88px); } }
+    @media (max-width: 860px) { .sw-copy { right: 52px !important; } }   /* clear of the progress rail */
+    .sw-copy__eyebrow, .sw-copy__num { text-shadow: 0 1px 2px #000, 0 0 14px rgba(0,0,0,.9); }
+    #world:empty ~ .tq { display: none; }   /* no layout jump before the engine mounts (CLS) */
     @media (max-width:860px) and (orientation:portrait) and (max-height:700px) { .sw-scene__video, .sw-scene__still { object-position: center 16% !important; } .sw-hint span { display: none; } }
 
     /* ── header: logo · call/text · book ── */
@@ -94,7 +107,7 @@
 
     /* ── after the film ── */
     .tq { position: relative; z-index: 55; margin-top: -70vh; background: var(--bg); border-top: 1px solid #1f1f24; box-shadow: 0 -30px 60px rgba(0,0,0,.55); overflow-x: clip; }
-    .sec { padding: clamp(56px, 8vw, 104px) clamp(18px, 5vw, 64px); }
+    .sec { padding: clamp(56px, 8vw, 104px) clamp(18px, 5vw, 64px); scroll-margin-top: 72px; }
     .sec--alt { background: #08080a; }
     .in { max-width: 1160px; margin: 0 auto; }
     .eyebrow { display: flex; align-items: center; gap: 14px; font-family: 'Syne', sans-serif; font-size: .74rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--cyan); margin: 0; }
@@ -108,7 +121,7 @@
     .card b { display: block; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.32rem; margin: 10px 0 8px; line-height: 1.15; }
     .card p { margin: 8px 0 0; color: #a9abb2; font-size: .96rem; line-height: 1.55; }
     .card ul { margin: 14px 0 0; padding: 0 0 0 18px; color: #d3d5da; font-size: .93rem; line-height: 1.6; }
-    .card .n { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.4rem; line-height: 1; color: #24262c; }
+    .card .n { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.4rem; line-height: 1; color: #63666e; }
     .card--mobile { margin-top: 16px; display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; border-color: color-mix(in srgb, var(--lblue) 50%, var(--line)); }
     .card--mobile small { color: var(--lblue); }
     .card--mobile b { font-size: 1.15rem; }
@@ -137,7 +150,7 @@
     .black ul { margin: 12px 0 0; padding: 0 0 0 18px; color: #d3d5da; font-size: .9rem; line-height: 1.6; columns: 2; column-gap: 24px; }
     @media (max-width: 760px) { .black { grid-template-columns: 1fr; } .black ul { columns: 1; } }
 
-    /* the work: ONE clean row, left to right — swipe / drag / arrows, no auto-motion (Jorge 2026-10-01). Portrait photos → 3:4 cards */
+    /* the work: one row, swipe / drag / arrows. Portrait photos → 3:4 cards */
     .strip-wrap { position: relative; margin: 26px 0 0; }
     .strip { display: flex; gap: 14px; margin: 0; padding: 0 0 6px; list-style: none; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; overscroll-behavior-x: contain; }
     .strip::-webkit-scrollbar { display: none; }
@@ -192,10 +205,11 @@
     .form .act { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     .form .note { grid-column: 1 / -1; color: var(--soft); font-size: .84rem; margin: 0; }
     .form .note.err { color: #ff8a8a; }
+    .form [aria-invalid=true] { border-color: #ff8a8a; }
     @media (max-width: 640px) { .form { grid-template-columns: 1fr; } }
-    .foot { padding: 34px clamp(18px, 5vw, 64px) calc(34px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); color: #6c6e75; font-size: .84rem; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; }
+    .foot { padding: 34px clamp(18px, 5vw, 64px) calc(34px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); color: #74767d; font-size: .84rem; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; }
     .foot img { height: 48px; width: auto; }
-    .foot a { color: #9a9ca3; text-decoration: none; }
+    .foot a { color: #9a9ca3; text-decoration: underline; }
     .foot a:hover { color: var(--cyan); }
   </style>
 </head>
@@ -206,8 +220,7 @@
   <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
     <div class="gate__in">
       <p class="gate__eyebrow">Welcome to</p>
-      <h1 class="gate__title" id="gateTitle"><img src="img/logo.png?v=1" alt="Beebe Luxury Auto Detail" width="1160" height="315"></h1>
-      <p class="gate__sub">PPF · Paint Correction · Ceramic Coating · Window Tint</p>
+      <h1 class="gate__title" id="gateTitle"><img src="img/logo.webp?v=2" alt="Beebe Luxury Auto Detail" width="840" height="223"><span class="gate__sub">PPF · Paint Correction · Ceramic Coating · Window Tint</span></h1>
       <button class="enter" id="enterBtn" type="button"><span class="enter__ring" aria-hidden="true"></span><span class="enter__text">Enter</span></button>
       <p class="gate__note"><span>1736 W Main St</span> · <span>Lexington, SC</span> · <span>(803) 745-0169</span></p>
     </div>
@@ -215,7 +228,7 @@
 
   <!-- header -->
   <header class="hdr">
-    <a class="hdr__logo" href="#top" aria-label="Beebe Luxury Auto Detail, top of page"><img src="img/logo.png?v=1" alt="Beebe Luxury Auto Detail" width="1160" height="315"></a>
+    <a class="hdr__logo" href="#top" aria-label="Beebe Luxury Auto Detail, top of page"><img src="img/logo.webp?v=2" alt="Beebe Luxury Auto Detail" width="840" height="223"></a>
     <div class="hdr__r">
       <a class="hdr__tel" href="tel:+18037450169"><small>Call or text</small>(803) 745-0169</a>
       <a class="btn btn--cyan btn--sm" href="https://app.urable.com/virtual-shop/n3LcNcXbjuqPa8x6TC5M" target="_blank" rel="noopener">Book</a>
@@ -229,8 +242,8 @@
     <section class="sec" id="services" aria-labelledby="services-h">
       <div class="in">
         <p class="eyebrow">What we do</p>
-        <h2 id="services-h">PPF, paint correction, <em>ceramic coating, window tint.</em></h2>
-        <p class="lead">Certified PPF and ceramic coating installer in Lexington, SC. 5.0 on Google across 174 reviews. Services uploaded to Carfax, warranty coverage, Afterpay accepted.</p>
+        <h2 id="services-h">PPF, Paint Correction, <em>Ceramic Coating, Window Tint.</em></h2>
+        <p class="lead">Certified PPF and Ceramic Coating installer in Lexington, SC. 5.0 on Google, 170+ reviews. Services uploaded to Carfax, warranty coverage, Afterpay accepted.</p>
         <ul class="grid4">
           <li class="card">
             <span class="n">01</span>
@@ -241,21 +254,21 @@
           </li>
           <li class="card">
             <span class="n">02</span>
-            <small>Paint correction</small>
+            <small>Paint Correction</small>
             <b>Swirls out. Depth back.</b>
             <p>Included in every ceramic coating level, or on its own as a Machine Polish.</p>
             <ul><li><strong>1-Step</strong>: removes light swirls and oxidation for a deep, glossy finish.</li><li><strong>2-Step</strong>: removes moderate to heavy swirls, oxidation, and surface defects. Restores true clarity and depth to your paint.</li></ul>
           </li>
           <li class="card">
             <span class="n">03</span>
-            <small>Ceramic coating</small>
+            <small>Ceramic Coating</small>
             <b>Unleash the ultimate shine with our ceramic coating.</b>
             <p>Protect your vehicle's paint and enhance its appearance with our premium ceramic coating service. This long-lasting protective layer offers resistance to light scratches, dirt, and environmental pollutants, ensuring your car shines like new for years to come.</p>
-            <ul><li>3-year, 5–7-year and 10-year packages</li><li>Certified System X Installers</li></ul>
+            <ul><li>3-year, 5–7 year and 10-year packages</li><li>Certified System X Installers</li></ul>
           </li>
           <li class="card">
             <span class="n">04</span>
-            <small>Window tint</small>
+            <small>Window Tint</small>
             <b>Enhance privacy and style with expert window tinting.</b>
             <p>Improve the comfort and aesthetics of your vehicle with our professional window tinting service. Our high-quality tints reduce glare, increase privacy, and provide UV protection, ensuring a cooler and safer ride.</p>
             <ul><li>Quoted per vehicle: call or text (803) 745-0169</li></ul>
@@ -265,7 +278,7 @@
           <div>
             <small>Mobile Detailing</small>
             <b>Bringing Luxury to Your Doorstep</b>
-            <p>At Beebe Luxury Auto Detail, we bring top-tier detailing directly to your home or office — saving you time without sacrificing quality. Our fully equipped mobile unit delivers the same premium results you'd expect from a high-end shop, all at your convenience.</p>
+            <p>At Beebe Luxury Auto Detail, we bring top-tier detailing directly to your home or office — saving you time without sacrificing quality. Our fully equipped mobile unit delivers the same premium results you'd expect from a high-end shop, all at your convenience. Mobile Detailing is subscription only: VIP Maintenance ($750 for 6 months, $1,200 a year) or the Black Card Membership below.</p>
           </div>
           <a class="btn btn--ghost" href="https://app.urable.com/virtual-shop/n3LcNcXbjuqPa8x6TC5M" target="_blank" rel="noopener">See mobile packages</a>
         </div>
@@ -277,10 +290,10 @@
       <div class="in">
         <p class="eyebrow">Packages &amp; pricing</p>
         <h2 id="packages-h">Straight prices. <em>Afterpay available.</em></h2>
-        <p class="lead">Prices as listed in the booking catalog. Where the price depends on vehicle size it reads "from". Window tint and detailing are quoted per vehicle.</p>
+        <p class="lead">Current prices from our online booking. "From" prices go up with vehicle size. Window Tint is quoted per vehicle; Mobile Detailing is subscription only.</p>
 
         <div class="grp">
-          <h3>Ceramic coating <span>Certified System X Installers · paint correction included</span></h3>
+          <h3>Ceramic Coating <span>Certified System X Installers · Paint Correction included</span></h3>
           <ul class="tiers">
             <li class="tier"><small>Level 1 · 3 year</small><b>3-Year Ceramic Coating</b><span class="price">$999</span>
               <ul><li>1-Step Paint Correction</li><li>Exterior Foam Bath</li><li>Paint Decontamination + Clay Bar Treatment</li><li>Wheel Well Deep Clean + Tire Scrub, Tire Shine</li><li>3-Year Ceramic Coating</li><li>Ceramic Sealant for Wheels &amp; Windows (up to 6 months)</li></ul></li>
@@ -292,7 +305,7 @@
         </div>
 
         <div class="grp">
-          <h3>Paint protection film <span>self-healing film · uploaded to Carfax</span></h3>
+          <h3>Paint Protection Film (PPF) <span>self-healing film · uploaded to Carfax</span></h3>
           <ul class="tiers">
             <li class="tier"><small>Essential</small><b>Essential PPF Package</b><span class="price">$350</span>
               <p>Protect where it matters most: Door Cup Protection Film, B-Pillar Protection Film, Door Edge Guard Film.</p></li>
@@ -316,7 +329,7 @@
         </div>
 
         <ul class="chips" aria-label="Also">
-          <li>Afterpay available</li><li>Credit &amp; debit cards</li><li>Services uploaded to Carfax</li><li>Mobile &amp; in-shop options</li><li>★★★★★ 5.0 on Google · 174 reviews</li>
+          <li>Afterpay available</li><li>Credit &amp; debit cards</li><li>Services uploaded to Carfax</li><li>Mobile &amp; in-shop options</li><li>★★★★★ 5.0 on Google · 170+ reviews</li>
         </ul>
         <div class="cta">
           <a class="btn btn--cyan" href="https://app.urable.com/virtual-shop/n3LcNcXbjuqPa8x6TC5M" target="_blank" rel="noopener">Book online</a>
@@ -331,7 +344,7 @@
       <div class="in">
         <p class="eyebrow">The work</p>
         <h2 id="work-h">Real cars. <em>Real results.</em></h2>
-        <p class="lead">Studio and driveway photos from Beebe's own Google and Instagram. Swipe through, tap a photo to see it full size.</p>
+        <p class="lead">Cars from the studio and from clients' driveways. Swipe through, tap a photo to see it full size.</p>
         <div class="strip-wrap">
           <button class="strip-nav prev" type="button" aria-label="Previous photos">&#8249;</button>
           <ul class="strip" id="carRow" aria-label="Photos of Beebe's work"></ul>
@@ -344,17 +357,17 @@
     <section class="sec sec--alt" id="reviews" aria-labelledby="reviews-h">
       <div class="in">
         <p class="eyebrow">What clients say</p>
-        <h2 id="reviews-h">Five stars, <em>174 times.</em></h2>
+        <h2 id="reviews-h">Rated 5.0 <em>on Google.</em></h2>
         <div class="score">
           <b>5.0</b>
           <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
-          <span>174 Google reviews · <a href="https://www.google.com/maps/search/Beebe+Luxury+Auto+Detail+Lexington+SC" target="_blank" rel="noopener">Read them all on Google</a></span>
+          <span>170+ Google reviews · <a href="https://www.google.com/maps/search/Beebe+Luxury+Auto+Detail+Lexington+SC" target="_blank" rel="noopener">Read them all on Google</a></span>
         </div>
         <ul class="revs">
-          <li class="rev"><span class="stars">★★★★★</span><p>Phenomenal service! Kewan accepted a "small" project that became a BEAST. He kept the original quote despite investing a HUGE amount of time beyond expectations. The final result is impressive: my hood shifted from appearing as if 7240 cats had spent a week sharpening their claws on my PPF to looking sleek and beautiful, nearly new. Highly recommend!!!</p><cite>Courtney · Google</cite></li>
+          <li class="rev"><span class="stars">★★★★★</span><p>Phenomenal service! Kewan accepted a "small" project that became a BEAST. He kept the original quote despite investing a HUGE amount of time beyond expectations. Throughout, he apologized for keeping my vehicle longer than planned. The final result is impressive: my hood shifted from appearing as if 7240 cats had spent a week sharpening their claws on my PPF to looking sleek and beautiful, nearly new. Highly recommend!!!</p><cite>Courtney · Google</cite></li>
           <li class="rev"><span class="stars">★★★★★</span><p>Exceptional service!!!!! Kewan perfected our Toyota 4 Runner hood. 5 star service!!!!</p><cite>David · Google</cite></li>
-          <li class="rev"><span class="stars">★★★★★</span><p>Beebe Luxury Auto Detail is absolutely AMAZING! This was hands down one of the best detailing experiences I've ever had. They performed an ozone treatment throughout the vehicle along with a thorough detailing, and WOW—what a difference! The musty smell is completely gone. And the exterior is absolutely beautiful! The attention to detail and quality of the work are outstanding.</p><cite>Tara · Google</cite></li>
-          <li class="rev"><span class="stars">★★★★★</span><p>I chose the 10-year ceramic coating, and the results are absolutely flawless. The exterior finish, depth, gloss, and overall presentation are outstanding. Even more impressive, both the interior and exterior look better now than they did the day I picked the vehicle up brand new from Tesla in Charlotte. Exceptional workmanship, excellent communication, and a true commitment to quality. Highly recommended.</p><cite>Bryson · Google</cite></li>
+          <li class="rev"><span class="stars">★★★★★</span><p>Beebe Luxury Auto Detail is absolutely AMAZING! This was hands down one of the best detailing experiences I've ever had. One of the main reasons I brought my vehicle in was because my car had developed a musty odor … They performed an ozone treatment throughout the vehicle along with a thorough detailing, and WOW—what a difference! The musty smell is completely gone. My car smells so clean and fresh inside! And the exterior is absolutely beautiful! My car looks incredible! The attention to detail and quality of the work are outstanding.</p><cite>Tara · Google</cite></li>
+          <li class="rev"><span class="stars">★★★★★</span><p>I chose the 10-year ceramic coating, and the results are absolutely flawless. The exterior finish, depth, gloss, and overall presentation are outstanding. Even more impressive, both the interior and exterior look better now than they did the day I picked the vehicle up brand new from Tesla in Charlotte. The car looks perfect. … Exceptional workmanship, excellent communication, and a true commitment to quality. Highly recommended.</p><cite>Bryson · Google</cite></li>
         </ul>
       </div>
     </section>
@@ -373,11 +386,11 @@
             </ul>
             <div class="ctc">
               <div><small>Call or text</small><a href="tel:+18037450169">(803) 745-0169</a></div>
-              <div><small>Email</small><a href="mailto:kewan@beebeluxuryautodetail.com">kewan@beebeluxuryautodetail.com</a></div>
               <div><small>Address</small><a href="https://www.google.com/maps/dir/?api=1&destination=1736+W+Main+St,+Lexington,+SC+29072" target="_blank" rel="noopener">1736 W Main St, Lexington, SC 29072</a></div>
               <div><small>Instagram</small><a href="https://www.instagram.com/beebe_luxuryautodetail/" target="_blank" rel="noopener">@beebe_luxuryautodetail</a></div>
               <div><small>Facebook</small><a href="https://www.facebook.com/Beebeluxuryautodetailllc" target="_blank" rel="noopener">Beebe Luxury Auto Detail</a></div>
               <div><small>Appointments</small><span>Appointment required · Mobile &amp; in-shop</span></div>
+              <div style="grid-column:1/-1"><small>Email</small><a href="mailto:kewan@beebeluxuryautodetail.com">kewan@beebeluxuryautodetail.com</a></div>
             </div>
             <div class="cta">
               <a class="btn btn--cyan" href="https://www.google.com/maps/dir/?api=1&destination=1736+W+Main+St,+Lexington,+SC+29072" target="_blank" rel="noopener">Get directions</a>
@@ -403,8 +416,8 @@
           <label>Vehicle (year, make, model) <input name="vehicle" placeholder="2024 Porsche 911" /></label>
           <label>Service
             <select name="service">
-              <option>Paint Protection Film (PPF)</option><option>Ceramic coating</option><option>Paint correction</option>
-              <option>Window tint</option><option>Mobile detailing</option><option>Black Card Membership</option>
+              <option>Paint Protection Film (PPF)</option><option>Ceramic Coating</option><option>Paint Correction</option>
+              <option>Window Tint</option><option>Mobile Detailing (Subscription Only)</option><option>Black Card Membership</option>
             </select>
           </label>
           <label>Preferred day <input name="day" type="date" /></label>
@@ -413,14 +426,14 @@
             <button class="btn btn--cyan" type="submit" id="qfBtn">Send request</button>
             <button class="btn btn--ghost" type="button" data-tq-chat>Or chat with us</button>
           </div>
-          <p class="note" id="qfNote">Goes straight to the shop. If it can't be sent, your email app opens with it filled in for kewan@beebeluxuryautodetail.com.</p>
+          <p class="note" id="qfNote">Opens your email app with the request filled in for kewan@beebeluxuryautodetail.com. Prefer to text? (803) 745-0169.</p>
           <a id="qfMail" hidden>Email</a>
         </form>
       </div>
     </section>
 
     <footer class="foot">
-      <img src="img/logo.png?v=1" alt="Beebe Luxury Auto Detail" width="1160" height="315" />
+      <img src="img/logo.webp?v=2" alt="Beebe Luxury Auto Detail" width="840" height="223" />
       <span>© 2026 Beebe Luxury Auto Detail · 1736 W Main St, Lexington, SC 29072 · <a href="tel:+18037450169">(803) 745-0169</a> · <a href="https://www.instagram.com/beebe_luxuryautodetail/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/Beebeluxuryautodetailllc" target="_blank" rel="noopener">Facebook</a></span>
     </footer>
   </div>
@@ -431,12 +444,12 @@
     <div class="lbcap" id="lbc"></div>
   </div>
 
-  <script src="assets/scrub-engine.js?v=2"></script>
+  <script src="assets/scrub-engine.js?v=3"></script>
   <script src="assets/gallery.js?v=1"></script>
-  <script src="assets/chat.js?v=1" defer></script>
+  <script src="assets/chat.js?v=2" defer></script>
   <script>
     var TEL = 'tel:+18037450169', BOOK = 'https://app.urable.com/virtual-shop/n3LcNcXbjuqPa8x6TC5M';
-    // fly-through: every seam is a shared frame (crossfade 0.012, no dips), like Glass House;
+    // fly-through: every seam is a shared frame (crossfade 0.012, no dips);
     // inside the shop each beat opens with a drift dissolve (xf, vh); outside every seam is a shared frame
     mountScrollWorld(document.getElementById('world'), {
       nav: false,
@@ -450,8 +463,8 @@
           clip: 'assets/vid/street.mp4?v=3', clipMobile: 'assets/vid/street-m.mp4?v=3',
           accent: '#00E8DA', scroll: 1.3,
           eyebrow: 'Beebe Luxury Auto Detail · Lexington, SC',
-          title: 'Luxury auto detail, Lexington SC.',
-          body: 'Paint Protection Film (PPF), Paint Correction, Ceramic Coating, Window Tint & Mobile Detailing (Subscription Only). Studio at 1736 W Main St, Lexington. Certified PPF and Ceramic Coating installer, 5.0 on Google across 174 reviews.',
+          title: 'Luxury auto detail, Lexington, SC.',
+          body: 'Paint Protection Film (PPF), Paint Correction, Ceramic Coating, Window Tint & Mobile Detailing (Subscription Only). Studio at 1736 W Main St, Lexington. Certified PPF and Ceramic Coating installer, 5.0 on Google, 170+ reviews.',
           tags: ['PPF', 'Ceramic Coating', 'Window Tint', '5.0 ★ on Google'],
         },
         {
@@ -461,7 +474,7 @@
           accent: '#d7dbe0', scroll: 1.4,
           eyebrow: 'The studio',
           title: 'Door up. Showroom in.',
-          body: 'By appointment. Credit and debit cards, Afterpay on the ceramic and PPF packages. Lamborghini, Ferrari, Porsche, Corvette, Tesla: see the gallery further down.',
+          body: 'By appointment. Credit and debit cards and Afterpay accepted. Ferrari, Porsche, Corvette, Aston Martin, Tesla: see the gallery further down.',
           tags: ['Appointment required', 'Afterpay'],
         },
         {
@@ -469,7 +482,7 @@
           still: 'assets/wash.webp?v=2', stillMobile: 'assets/wash-m.webp?v=2',
           clip: 'assets/vid/wash.mp4?v=2', clipMobile: 'assets/vid/wash-m.mp4?v=2',
           accent: '#00E8DA', scroll: 1.4,
-          eyebrow: 'Step one · Prep',
+          eyebrow: 'Prep',
           title: 'Foam bath, decon, clay.',
           body: 'Exterior foam bath, paint decontamination and clay bar treatment, wheel wells and tires: the prep every ceramic level starts with.',
           tags: ['Foam bath', 'Decon + clay bar', 'Wheel well deep clean'],
@@ -479,7 +492,7 @@
           still: 'assets/correct.webp?v=2', stillMobile: 'assets/correct-m.webp?v=2',
           clip: 'assets/vid/correct.mp4?v=2', clipMobile: 'assets/vid/correct-m.mp4?v=2',
           accent: '#d7dbe0', scroll: 1.7,
-          eyebrow: 'Step two · Paint correction',
+          eyebrow: 'Paint Correction',
           title: 'Swirls out. Depth back.',
           body: '1-Step removes light swirls and oxidation; 2-Step removes moderate to heavy swirls and surface defects and restores true clarity and depth to your paint.',
           tags: ['1-Step · Level 1', '2-Step · Levels 2–3'],
@@ -489,7 +502,7 @@
           still: 'assets/ppf.webp?v=2', stillMobile: 'assets/ppf-m.webp?v=2',
           clip: 'assets/vid/ppf.mp4?v=2', clipMobile: 'assets/vid/ppf-m.mp4?v=2',
           accent: '#00E8DA', scroll: 1.7,
-          eyebrow: 'Step three · Paint protection film',
+          eyebrow: 'Paint Protection Film (PPF)',
           title: 'Invisible shield.',
           body: 'Self-healing film on the hood, bumper, fenders and mirrors against rock chips, scratches and road debris. Essential, Full Frontal, Track Package or Full Body.',
           tags: ['Self-healing', 'Essential $350', 'Full Frontal from $1,800'],
@@ -499,7 +512,7 @@
           still: 'assets/coat.webp?v=2', stillMobile: 'assets/coat-m.webp?v=2',
           clip: 'assets/vid/coat.mp4?v=2', clipMobile: 'assets/vid/coat-m.mp4?v=2',
           accent: '#5B9ED5', scroll: 1.7,
-          eyebrow: 'Step four · Ceramic coating',
+          eyebrow: 'Ceramic Coating',
           title: 'Certified System X Installers.',
           body: '3, 5–7 or 10-year ceramic coating: repels dirt, water and UV rays, keeps the paint looking showroom fresh and makes maintenance a breeze.',
           tags: ['Level 1 · 3 yr · $999', 'Level 2 · 5–7 yr · $1,350', 'Level 3 · 10 yr · $1,700'],
@@ -509,7 +522,7 @@
           still: 'assets/tint.webp?v=2', stillMobile: 'assets/tint-m.webp?v=2',
           clip: 'assets/vid/tint.mp4?v=2', clipMobile: 'assets/vid/tint-m.mp4?v=2',
           accent: '#d7dbe0', scroll: 1.5,
-          eyebrow: 'Step five · Window tint',
+          eyebrow: 'Window Tint',
           title: 'Privacy, UV, a cooler ride.',
           body: 'High-quality tint that reduces glare, increases privacy and provides UV protection, for a cooler and safer ride.',
           tags: ['Less glare', 'Privacy', 'UV protection'],
@@ -530,6 +543,7 @@
       connectors: [],
       crossfade: 0.012,
     });
+    document.querySelectorAll('.sw-copy__cta a[href^="http"]').forEach(function (a) { a.target = '_blank'; a.rel = 'noopener'; });
   </script>
 
   <script>
@@ -553,7 +567,7 @@
           if (p < 1) requestAnimationFrame(step); else gate.remove();
         })(t0);
       }
-      if (location.hash && location.hash !== '#top') { open(true); return; }   // deep links (#quote, #packages) skip the welcome
+      if (location.hash && location.hash !== '#top') { open(true); var t = document.getElementById(location.hash.slice(1)); if (t) addEventListener('load', function () { t.scrollIntoView(); }); return; }   // deep links (#quote, #packages) skip the welcome
       root.classList.add('gated'); window.scrollTo(0, 0);
       btn.addEventListener('click', function () { open(false); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Enter' && document.activeElement !== btn && root.contains(gate)) open(false); });
@@ -564,7 +578,7 @@
     (function () {
       var G = GALLERY_ITEMS; // [file, title, caption]
       function card(g, i) {
-        return '<li><button class="gcard" type="button" data-i="' + i + '" aria-label="' + g[1] + ' — ' + g[2] + ', open full size">' +
+        return '<li><button class="gcard" type="button" data-i="' + i + '" aria-label="' + g[1] + ' ' + g[2] + ', open full size">' +
           '<img src="img/gal/' + g[0] + '-s.webp" alt="' + g[1] + ' — ' + g[2] + ', by Beebe Luxury Auto Detail" loading="lazy" width="600" height="800">' +
           '<span class="gcap"><b>' + g[1] + '</b><em>' + g[2] + '</em></span></button></li>';
       }
@@ -596,17 +610,17 @@
       addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('on')) close(); });
     })();
 
-    // quote form -> POST /api/lead (JSON, site: beebe); if that fails, the visitor's own email app
+    // quote form -> the visitor's own email app, addressed to the shop (GitHub Pages has no lead backend)
     (function () {
       var f = document.getElementById('qf'), note = document.getElementById('qfNote'), btn = document.getElementById('qfBtn'), fb = document.getElementById('qfMail');
       var MAIL = 'kewan@beebeluxuryautodetail.com';
       f.addEventListener('submit', function (e) {
         e.preventDefault();
         var d = new FormData(f), name = (d.get('name') || '').trim(), phone = (d.get('phone') || '').trim();
+        ['name', 'phone'].forEach(function (n) { var el = f.querySelector('[name=' + n + ']'); el.setAttribute('aria-invalid', !el.value.trim()); });
         if (!name || !phone) { note.className = 'note err'; note.textContent = 'Please add your name and a phone number so Kewan can reach you.'; f.querySelector(name ? '[name=phone]' : '[name=name]').focus(); return; }
         var data = { site: 'beebe', name: name, contact: phone, phone: phone, email: (d.get('email') || '').trim(), vehicle: (d.get('vehicle') || '').trim(),
                      need: d.get('service'), needLabel: d.get('service'), day: d.get('day') || '', message: (d.get('msg') || '').trim(), page: location.href, lang: 'en' };
-        note.className = 'note'; note.textContent = 'Sending…'; btn.disabled = true;
         function fail() {
           btn.disabled = false; note.className = 'note';
           note.textContent = 'Opening your email app with the request filled in. Or call or text (803) 745-0169.';
@@ -615,11 +629,7 @@
           fb.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('Quote request: ' + data.need + ' — ' + name) + '&body=' + encodeURIComponent(body);
           fb.click();
         }
-        function ok() { btn.disabled = false; note.className = 'note'; note.textContent = 'Thank you. Kewan will text you back to confirm.'; f.reset(); }
-        if (!window.fetch) { fail(); return; }
-        fetch('https://rebeltechmiami.com/api/lead', { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(data) })
-          .then(function () { ok(); })
-          .catch(fail);
+        fail();
       });
     })();
   </script>

@@ -6,7 +6,7 @@
 
   const TEL = '+18037450169', MAIL = 'kewan@beebeluxuryautodetail.com';
   const SRC = document.currentScript && document.currentScript.src;
-  const ICON = SRC ? new URL('../img/logo.png?v=1', SRC).href : 'img/logo.png';
+  const ICON = SRC ? new URL('../img/logo.webp?v=2', SRC).href : 'img/logo.webp?v=2';
   const KEY = 'blc-state', GREET_KEY = 'blc-greeted';
   const GREETING = 'Hey 👋 Welcome to Beebe Luxury Auto Detail. Want a quote or to book a spot?';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
@@ -21,17 +21,17 @@
     ppf: { name: 'Paint Protection Film (PPF)', label: 'Coverage',
       intro: "Invisible shield for your car's protection: self-healing film against rock chips, scratches and everyday wear. Essential $350, Full Frontal from $1,800, Track Package from $2,400, Full Body from $5,800.",
       ask: 'How much coverage?', chips: ['Essential (door cups, B-pillars, edges)', 'Full Frontal', 'Track Package', 'Full Body', 'Not sure'] },
-    cer: { name: 'Ceramic coating', label: 'Package',
+    cer: { name: 'Ceramic Coating', label: 'Package',
       intro: 'Certified System X Installers. Level 1 (3 year) $999, Level 2 (5–7 year, multi-layer) $1,350, Level 3 (10 year) $1,700, paint correction included. Afterpay available.',
       ask: 'Which level sounds right?', chips: ['Level 1 · 3 year', 'Level 2 · 5–7 year', 'Level 3 · 10 year', 'Not sure'] },
-    pc: { name: 'Paint correction', label: 'Condition',
+    pc: { name: 'Paint Correction', label: 'Condition',
       intro: '1-Step removes light swirls and oxidation; 2-Step removes moderate to heavy swirls, oxidation and surface defects. Included in every ceramic level; Machine Polish on its own is $150.',
       ask: 'Light swirls, or does it need the heavier cut?', chips: ['Light swirls', 'Heavy swirls / scratches', 'Not sure'] },
-    tint: { name: 'Window tint', label: 'Windows',
+    tint: { name: 'Window Tint', label: 'Windows',
       intro: 'Professional window tinting: reduces glare, increases privacy and provides UV protection for a cooler, safer ride. Quoted per vehicle.',
       ask: 'Which windows?', chips: ['All windows', 'Front two', 'Not sure'] },
-    mob: { name: 'Mobile detailing', label: 'Where',
-      intro: 'Bringing Luxury to Your Doorstep: the fully equipped mobile unit comes to your home or office with the same premium results as the shop.',
+    mob: { name: 'Mobile Detailing', label: 'Where',
+      intro: 'Bringing Luxury to Your Doorstep: Mobile Detailing is subscription only (VIP Maintenance or Black Card Membership). The fully equipped mobile unit comes to your home or office with the same premium results as the shop.',
       ask: 'Home, office, or drop off at the shop?', chips: ['Home', 'Office', 'Drop off at the shop'] },
     q: { name: 'Question', chip: 'Just a question', label: 'Question' },
   };
@@ -48,33 +48,33 @@
     cer: 'Ceramic: Level 1 $999, Level 2 $1,350, Level 3 $1,700, paint correction included. Afterpay available.',
     pc: 'Paint correction is inside every ceramic level (1-Step in Level 1, 2-Step in Levels 2 and 3). Machine Polish on its own is $150.',
     tint: 'Window tint is quoted per vehicle. Send the year, make and model and Kewan texts you a price.',
-    mob: 'Mobile detailing: Elite Detail Package from $600, VIP Maintenance $750 for 6 months or $1,200 a year, Black Card Membership $2,800 for 6 months or $4,200 a year.',
+    mob: 'Mobile Detailing is subscription only: VIP Maintenance $750 for 6 months or $1,200 a year, Black Card Membership $2,800 for 6 months or $4,200 a year. Prefer to drop it off? The Elite Detail Package at the shop starts at $600.',
   };
-  const ALL_PRICES = 'Ceramic from $999, PPF from $350, Black Card Membership from $2,800; tint and detailing are quoted per vehicle. Send the details and Kewan texts you a price.';
+  const ALL_PRICES = 'Ceramic Coating from $999, PPF from $350, Mobile Detailing subscriptions from $750; Window Tint is quoted per vehicle. Send the details and Kewan texts you a price.';
   const svcIn = (t) => /ppf|protection film|clear bra|rock chip/.test(t) ? 'ppf' : /ceramic coat|coating|system x/.test(t) ? 'cer'
     : /correct|polish|swirl|scratch/.test(t) ? 'pc' : /mobile|come to me|my house|doorstep|detail/.test(t) ? 'mob'
     : /tint|film|window/.test(t) ? 'tint' : '';
   const cur = () => (st.svc !== 'q' ? st.svc : '');
-  const WARRANTY = 'PPF installs come with a manufacturer-backed warranty and are uploaded to Carfax. Ask Kewan for the coating warranty details when he quotes.';
+  const WARRANTY = 'Work comes with warranty coverage and is uploaded to Carfax. Kewan gives the warranty details for your package when he quotes.';
   const PRICE_RE = /price|cost|how much|\$|pricing|quote|charge/;
   const INTENTS = [
     [/warrant|guarantee|carfax/, () => WARRANTY],
     [/black card|membership|vip|maintenance plan/, () => 'Black Card Membership: on-call priority, up to 4 maintenance appointments a month, polishing included, white-glove mobile service, priority scheduling. $2,800 for 6 months or $4,200 a year. VIP Maintenance is $750 for 6 months or $1,200 a year.'],
-    [/afterpay|financ|payment|pay (in|with)|credit card/, () => 'Afterpay is available on the ceramic and PPF packages; credit and debit cards are accepted.'],
+    [/afterpay|financ|payment|pay (in|with)|credit card/, () => 'Afterpay is accepted, plus credit and debit cards.'],
     [PRICE_RE, (t) => PRICE[svcIn(t) || cur()] || ALL_PRICES],
-    [/business|since when|experience|reviews?|rating|how long (have|has)|certif/, () => 'Certified PPF and ceramic coating installer, 5.0 stars on Google across 174 reviews, and a Columbia Regional Business Report Forty Under 40 honoree.'],
+    [/business|since when|experience|reviews?|rating|how long (have|has)|certif/, () => 'Certified PPF and Ceramic Coating installer, 5.0 stars on Google with 170+ reviews, and a Columbia Regional Business Report Forty Under 40 honoree.'],
     [/how long|how many (days|hours)|turnaround|durab|\blast\b/, (t) => {
       const s = svcIn(t) || cur();
       if (/\blast|durab/.test(t)) return s === 'cer' ? 'Level 1 lasts 3 years, Level 2 5 to 7 years, Level 3 up to 10 years.' : s === 'ppf' ? 'The film resists yellowing, staining and UV damage, and minor surface scratches disappear with heat.' : 'Kewan covers that when he quotes.';
       return s === 'cer' ? 'Levels 1 and 2 take about 6 hours, Level 3 about 48 hours. Kewan confirms timing when he quotes.' : s === 'ppf' ? 'Essential about 1 hour, Full Frontal about 48 hours, Full Body about 120 hours. Kewan confirms timing when he quotes.' : 'Kewan confirms timing when he quotes.';
     }],
-    [/book|schedule|appointment|availab/, () => 'Book online at app.urable.com (Services & Availability on the site), or text (803) 745-0169. Appointment required.'],
+    [/book|schedule|appointment|availab/, () => 'Book online with the Book button at the top of this page, or text (803) 745-0169. Appointment required.'],
     [/mobile|come to me|my house|travel|on site|onsite|doorstep/, () => SVC.mob.intro],
     [/(your|of|past|previous) work|portfolio|gallery|instagram|before and after|examples?/, () => 'See the work on Instagram @beebe_luxuryautodetail and in the gallery on this page.'],
     [/\bwhere\b|locat|address|directions/, () => '1736 W Main St, Lexington, SC 29072. Call or text (803) 745-0169 if you need directions.'],
     [/hours|open|close|weekend|saturday|sunday/, () => 'Monday to Friday 8:30 am to 6 pm, Saturday 10 am to 5 pm, closed Sunday.'],
-    [/system x|brand|material|what (film|coating)|which (film|coating)/, () => 'Ceramic coatings are System X: Beebe is a Certified System X Installer.'],
-    [/shade|percent|%|darkest|legal|limo/, () => 'Kewan walks you through the shades and the South Carolina limits, and respects the percentage you want.'],
+    [/system x|brand|material|what coating|which coating/, () => 'Ceramic coatings are System X: Beebe is a Certified System X Installer.'],
+    [/shade|percent|%|darkest|legal|limo/, () => "Kewan walks you through the shades and South Carolina's legal limits when he quotes."],
     [/ppf|protection film|clear bra|rock chip/, () => SVC.ppf.intro],
     [/ceramic coat|coating/, () => SVC.cer.intro],
     [/correct|polish|swirl|scratch|oxid/, () => SVC.pc.intro],
@@ -134,7 +134,7 @@
     ico('M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z', 26) + `</button>` +
     `<div class="dhc-panel" id="dhc-panel" role="dialog" aria-modal="true" aria-label="Chat with Beebe Luxury Auto Detail" tabindex="-1" hidden>` +
       `<div class="dhc-head"><img src="${ICON}" alt="" width="40" height="40">` +
-        `<div class="dhc-title"><strong>Beebe Luxury Auto Detail</strong><span>PPF · Paint correction · Ceramic · Tint — Lexington, SC</span></div>` +
+        `<div class="dhc-title"><strong>Beebe Luxury Auto Detail</strong><span>PPF · Paint Correction · Ceramic Coating · Window Tint — Lexington, SC</span></div>` +
         `<button type="button" class="dhc-restart">Start over</button>` +
         `<button type="button" class="dhc-x dhc-close" aria-label="Close chat">${X}</button></div>` +
       `<div class="dhc-scroll"><div class="dhc-log" aria-live="polite"></div>` +
@@ -253,8 +253,7 @@
         if (fromChip && t === 'Other') return bot('No problem. Type the year, make and model.');
         if (t.length < 2 || t.length > 60) return bot('Just the year, make and model works, like 2024 Porsche 911.');
         st.car = t; return next(SVC[st.svc].ask ? 'detail' : 'when');
-      // only chrome delete's detail is optional ("No thanks" is a real answer to the windshield add-on)
-      case 'detail': st.detail = st.svc === 'chr' && isSkip(t) ? '' : t.slice(0, 80); return next('when');
+      case 'detail': st.detail = t.slice(0, 80); return next('when');
       case 'when': st.when = t.slice(0, 60); st.pick = 0; return next('name');
       case 'q': st.detail = t; return next('name');
       case 'name':
@@ -350,7 +349,7 @@
 
   // ---- keep the launcher, pill and bubble off the page's copy and buttons ----
   // the shop card scrolls under the fixed launcher: check real rects live, fade whatever overlaps
-  const AVOID = '.sw-copy, .sw-topcta, .sw-route, .sw-hint, .dh a, .dh button';
+  const AVOID = '.sw-copy, .sw-topcta, .sw-route, .sw-hint, .tq a, .tq button';
   const hit = (a, b) => a.width && b.width && a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
   let raf = 0, bubbleT = 0;
   function dodge() {
