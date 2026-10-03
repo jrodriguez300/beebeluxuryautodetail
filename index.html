@@ -637,6 +637,24 @@
       });
     })();
   </script>
+  <script>
+    // ?debug=1: on-screen film readout for real-phone checks (iOS video can't be reproduced on desktop)
+    if (/[?&]debug=1/.test(location.search)) (function () {
+      var box = document.createElement('pre'), errs = [];
+      box.style.cssText = 'position:fixed;left:4px;right:4px;top:70px;z-index:9999;margin:0;padding:6px;font:11px/1.35 ui-monospace,monospace;color:#0f0;background:rgba(0,0,0,.82);white-space:pre-wrap;pointer-events:none;max-height:45vh;overflow:hidden';
+      addEventListener('error', function (e) { errs.push((e.message || 'error') + ' ' + (e.filename || '').split('/').pop() + ':' + (e.lineno || '')); }, true);
+      document.addEventListener('error', function (e) { var t = e.target; if (t && t.tagName === 'VIDEO') errs.push('video err ' + (t.error && t.error.code)); }, true);
+      addEventListener('load', function () { document.body.appendChild(box); });
+      setInterval(function () {
+        var rows = [].map.call(document.querySelectorAll('.sw-scene'), function (sc, i) {
+          var v = sc.querySelector('video'), op = +getComputedStyle(sc).opacity;
+          if (op < 0.05 || !v) return null;
+          return i + ' op' + op.toFixed(2) + ' rs' + v.readyState + ' ns' + v.networkState + ' t' + v.currentTime.toFixed(2) + (v.paused ? ' P' : ' PLAY') + (sc.classList.contains('has-clip') ? ' clip' : ' still') + ' ' + (v.currentSrc || 'nosrc').slice(0, 12) + (v.error ? ' ERR' + v.error.code : '');
+        }).filter(Boolean);
+        box.textContent = 'y' + Math.round(scrollY) + ' vh' + innerHeight + ' w' + innerWidth + ' gate' + !!document.getElementById('gate') + '\n' + rows.join('\n') + '\n' + navigator.userAgent.replace(/.*OS ([\d_]+).*/, 'iOS $1') + '\n' + errs.slice(-4).join('\n');
+      }, 400);
+    })();
+  </script>
   <script data-poster-fix>
     addEventListener('load', () => {
       setTimeout(() => {
