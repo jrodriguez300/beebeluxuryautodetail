@@ -92,6 +92,8 @@
     .enter:focus-visible { outline: 2px solid var(--cyan); outline-offset: 10px; border-radius: 50%; }
     .gate__note { margin: 0; font-size: .7rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.6); animation: gate-rise 1.4s cubic-bezier(.2,.8,.2,1) .9s both; }
     .gate__note span { white-space: nowrap; }
+    .gate.is-opening { pointer-events: none; touch-action: auto; }   /* the page under the opening circle takes the swipe */
+    @supports (overflow: clip) { html, body { overflow-x: clip; } }   /* engine sets hidden on both = body becomes a scroller on iOS */
     .gate.is-opening .gate__in { opacity: 0; transform: scale(.97); transition: opacity .5s ease, transform 1s cubic-bezier(.2,.8,.2,1); }
     @keyframes gate-bg { from { transform: scale(1.12); } to { transform: scale(1.02); } }
     @keyframes gate-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
@@ -555,11 +557,13 @@
       function open(instant) {
         if (gate.classList.contains('is-opening')) return;
         root.classList.remove('gated');
-        window.scrollTo(0, 0);
+        // iOS Safari can stay frozen after overflow:hidden is lifted (same bug as rebeltechmiami.com 2026-10-01): reflow + nudge
+        root.style.scrollBehavior = 'auto'; void document.body.offsetHeight; window.scrollTo(0, 1); window.scrollTo(0, 0); root.style.scrollBehavior = '';
         if (instant || matchMedia('(prefers-reduced-motion: reduce)').matches) { gate.remove(); return; }
         var r = btn.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2, r0 = r.width / 2;
         var R = Math.hypot(Math.max(cx, innerWidth - cx), Math.max(cy, innerHeight - cy)) + 40, t0 = performance.now(), D = 1150;
         gate.classList.add('is-opening');
+        setTimeout(function () { if (gate.parentNode) gate.remove(); }, D + 600);   // watchdog: never leave the gate up if rAF stalls
         (function step(now) {
           var p = Math.min(1, (now - t0) / D), e = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
           var rad = r0 + (R - r0) * e, m = 'radial-gradient(circle at ' + cx + 'px ' + cy + 'px, transparent ' + rad.toFixed(1) + 'px, #000 ' + (rad + 1.5).toFixed(1) + 'px)';
